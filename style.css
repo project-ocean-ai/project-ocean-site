@@ -346,3 +346,92 @@ footer a:hover {
     transition: none !important;
   }
 }
+/* OCEAN PHASE 8 — MOTION LUXURY */
+
+.hero {
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: min(620px, 70vw);
+  height: min(620px, 70vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(155, 220, 255, 0.13),
+    rgba(98, 200, 255, 0.05) 38%,
+    transparent 68%
+  );
+  filter: blur(18px);
+  z-index: -1;
+  animation: oceanPulse 9s ease-in-out infinite;
+}
+
+@keyframes oceanPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+.kicker {
+  animation: signalDrift 7s ease-in-out infinite alternate;
+}
+
+@keyframes signalDrift {
+  from {
+    letter-spacing: 0.34em;
+    opacity: 0.78;
+  }
+
+  to {
+    letter-spacing: 0.38em;
+    opacity: 1;
+  }
+}
+
+.access-form {
+  transform-style: preserve-3d;
+}
+
+.access-form:hover {
+  transform: translateY(-3px) scale(1.005);
+}
+
+button {
+  isolation: isolate;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.42),
+    transparent 44%
+  );
+  opacity: 0;
+  transform: translateX(-30%);
+  transition: opacity 260ms ease;
+  z-index: -1;
+}
+
+button:hover::before {
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .kicker {
+    animation: none !important;
+  }
+}
