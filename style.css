@@ -1,93 +1,3 @@
-/* OCEAN PHASE 2 — SPACING + HOVER + ANIMATED GRADIENT */
-
-body {
-  background-size: 140% 140%;
-  animation: oceanDrift 24s ease-in-out infinite alternate;
-}
-
-@keyframes oceanDrift {
-  0% {
-    background-position: 48% 14%, 82% 76%, 18% 88%, center;
-  }
-
-  100% {
-    background-position: 54% 18%, 76% 70%, 24% 82%, center;
-  }
-}
-
-.brand {
-  transition: opacity 240ms ease, transform 240ms ease;
-}
-
-.brand:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-.hero {
-  padding-top: clamp(70px, 10vh, 120px);
-  padding-bottom: clamp(90px, 12vh, 140px);
-}
-
-.kicker {
-  margin-bottom: clamp(24px, 3vw, 36px);
-}
-
-h1 {
-  margin-bottom: clamp(28px, 4vw, 44px);
-}
-
-.subheadline {
-  margin-top: 0;
-}
-
-.access-form {
-  margin-top: clamp(44px, 5vw, 64px);
-}
-
-.access-form:hover {
-  border-color: rgba(155, 220, 255, 0.28);
-  box-shadow:
-    0 40px 130px rgba(0, 0, 0, 0.48),
-    0 0 80px rgba(98, 200, 255, 0.11),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-input:hover {
-  color: #ffffff;
-}
-
-button {
-  position: relative;
-  overflow: hidden;
-}
-
-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.34),
-    transparent
-  );
-  transform: translateX(-120%);
-  transition: transform 700ms ease;
-}
-
-button:hover::after {
-  transform: translateX(120%);
-}
-
-.trust {
-  margin-top: clamp(24px, 3vw, 34px);
-  color: rgba(220, 235, 248, 0.72);
-}
-
-footer {
-  padding-bottom: 48px;
-}
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 :root {
@@ -95,13 +5,11 @@ footer {
   --bg-soft: #071523;
   --text: #f3f8ff;
   --muted: rgba(220, 235, 248, 0.68);
-  --soft: rgba(220, 235, 248, 0.48);
+  --soft: rgba(220, 235, 248, 0.72);
   --line: rgba(190, 225, 255, 0.14);
   --glass: rgba(255, 255, 255, 0.055);
   --blue: #9bdcff;
   --blue-strong: #62c8ff;
-  --hero-size: clamp(54px, 8vw, 118px);
-  --sub-size: clamp(19px, 2.1vw, 28px);
 }
 
 * {
@@ -121,11 +29,17 @@ body {
   background:
     radial-gradient(circle at 50% 16%, rgba(98, 200, 255, 0.22), transparent 34%),
     radial-gradient(circle at 82% 76%, rgba(25, 92, 138, 0.22), transparent 32%),
-    radial-gradient(circle at 18% 88%, rgba(112, 207, 255, 0.08), transparent 30%),
     linear-gradient(180deg, var(--bg-soft), var(--bg));
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  background-size: 140% 140%;
+  animation: oceanDrift 24s ease-in-out infinite alternate;
+}
+
+@keyframes oceanDrift {
+  from { background-position: 48% 14%, 82% 76%, center; }
+  to { background-position: 54% 18%, 76% 70%, center; }
 }
 
 body::before {
@@ -135,20 +49,12 @@ body::before {
   pointer-events: none;
   background-image: repeating-radial-gradient(
     circle at center,
-    rgba(255, 255, 255, 0.028) 0,
-    rgba(255, 255, 255, 0.028) 1px,
+    rgba(255,255,255,0.028) 0,
+    rgba(255,255,255,0.028) 1px,
     transparent 1px,
     transparent 18px
   );
   opacity: 0.42;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: -20%;
-  pointer-events: none;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.42) 72%);
 }
 
 .page {
@@ -166,7 +72,7 @@ body::after {
   font-size: 13px;
   font-weight: 850;
   letter-spacing: 0.36em;
-  color: rgba(243, 248, 255, 0.88);
+  color: rgba(243,248,255,0.88);
 }
 
 .hero {
@@ -179,7 +85,7 @@ body::after {
 }
 
 .kicker {
-  margin-bottom: 24px;
+  margin-bottom: 30px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.34em;
@@ -188,20 +94,21 @@ body::after {
 }
 
 h1 {
-  max-width: 1040px;
-  font-size: var(--hero-size);
-  line-height: 0.92;
-  letter-spacing: -0.07em;
+  max-width: 1080px;
+  font-size: clamp(50px, 7vw, 104px);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  word-spacing: 0.03em;
   font-weight: 900;
   text-shadow:
-    0 22px 70px rgba(0, 0, 0, 0.58),
-    0 0 80px rgba(98, 200, 255, 0.08);
+    0 22px 70px rgba(0,0,0,0.58),
+    0 0 80px rgba(98,200,255,0.08);
 }
 
 .subheadline {
   max-width: 790px;
-  margin-top: 34px;
-  font-size: var(--sub-size);
+  margin-top: 32px;
+  font-size: clamp(19px, 2.1vw, 28px);
   line-height: 1.48;
   color: var(--muted);
 }
@@ -219,18 +126,8 @@ h1 {
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
   box-shadow:
-    0 34px 110px rgba(0, 0, 0, 0.42),
-    inset 0 1px 0 rgba(255, 255, 255, 0.075);
-  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
-}
-
-.access-form:focus-within {
-  transform: translateY(-2px);
-  border-color: rgba(155, 220, 255, 0.44);
-  box-shadow:
-    0 40px 130px rgba(0, 0, 0, 0.48),
-    0 0 70px rgba(98, 200, 255, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 34px 110px rgba(0,0,0,0.42),
+    inset 0 1px 0 rgba(255,255,255,0.075);
 }
 
 input {
@@ -244,7 +141,7 @@ input {
 }
 
 input::placeholder {
-  color: rgba(220, 235, 248, 0.46);
+  color: rgba(220,235,248,0.46);
 }
 
 button {
@@ -258,24 +155,30 @@ button {
   font-weight: 850;
   cursor: pointer;
   box-shadow:
-    0 0 36px rgba(98, 200, 255, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.45);
-  transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.06);
-  box-shadow:
-    0 0 54px rgba(98, 200, 255, 0.38),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+    0 0 36px rgba(98,200,255,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.45);
 }
 
 .trust {
-  margin-top: 24px;
+  margin-top: 26px;
   color: var(--soft);
   font-size: 13px;
   letter-spacing: 0.1em;
+}
+
+.form-message {
+  min-height: 24px;
+  margin-top: 18px;
+  color: rgba(220,235,248,0.78);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.form-message.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
@@ -288,10 +191,6 @@ footer a {
   text-decoration: none;
   font-size: 14px;
   opacity: 0.86;
-}
-
-footer a:hover {
-  opacity: 1;
 }
 
 @media (max-width: 720px) {
@@ -310,24 +209,12 @@ footer a:hover {
   }
 
   h1 {
-  max-width: 1080px;
-  font-size: clamp(50px, 7vw, 104px);
-  line-height: 0.96;
-  letter-spacing: -0.045em;
-  word-spacing: 0.03em;
-  font-weight: 900;
-  text-shadow:
-    0 22px 70px rgba(0, 0, 0, 0.58),
-    0 0 80px rgba(98, 200, 255, 0.08);
-}
-
-  .subheadline {
-    margin-top: 26px;
+    font-size: clamp(46px, 13vw, 72px);
+    line-height: 0.98;
   }
 
   .access-form {
     grid-template-columns: 1fr;
-    border-radius: 26px;
   }
 
   button {
@@ -336,76 +223,5 @@ footer a:hover {
 
   .trust {
     line-height: 1.75;
-  }
-}
-
-.access-form.submitted {
-  border-color: rgba(155, 220, 255, 0.48);
-}
-
-.access-form.submitted button {
-  background: linear-gradient(135deg, #dff8ff, #9bdcff);
-}
-/* OCEAN PHASE 3 — CINEMATIC ENTRY + SCROLL REVEALS */
-
-.brand,
-.kicker,
-h1,
-.subheadline,
-.access-form,
-.trust,
-footer {
-  opacity: 0;
-  transform: translateY(18px);
-  animation: oceanReveal 900ms cubic-bezier(.16, 1, .3, 1) forwards;
-}
-
-.brand { animation-delay: 80ms; }
-.kicker { animation-delay: 220ms; }
-h1 { animation-delay: 340ms; }
-.subheadline { animation-delay: 500ms; }
-.access-form { animation-delay: 660ms; }
-.trust { animation-delay: 820ms; }
-footer { animation-delay: 1040ms; }
-
-@keyframes oceanReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 900ms cubic-bezier(.16, 1, .3, 1),
-    transform 900ms cubic-bezier(.16, 1, .3, 1);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-
-  .brand,
-  .kicker,
-  h1,
-  .subheadline,
-  .access-form,
-  .trust,
-  footer,
-  .reveal {
-    opacity: 1;
-    transform: none;
   }
 }
