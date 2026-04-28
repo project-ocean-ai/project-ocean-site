@@ -1,3 +1,93 @@
+/* OCEAN PHASE 2 — SPACING + HOVER + ANIMATED GRADIENT */
+
+body {
+  background-size: 140% 140%;
+  animation: oceanDrift 24s ease-in-out infinite alternate;
+}
+
+@keyframes oceanDrift {
+  0% {
+    background-position: 48% 14%, 82% 76%, 18% 88%, center;
+  }
+
+  100% {
+    background-position: 54% 18%, 76% 70%, 24% 82%, center;
+  }
+}
+
+.brand {
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.brand:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.hero {
+  padding-top: clamp(70px, 10vh, 120px);
+  padding-bottom: clamp(90px, 12vh, 140px);
+}
+
+.kicker {
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+h1 {
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.subheadline {
+  margin-top: 0;
+}
+
+.access-form {
+  margin-top: clamp(44px, 5vw, 64px);
+}
+
+.access-form:hover {
+  border-color: rgba(155, 220, 255, 0.28);
+  box-shadow:
+    0 40px 130px rgba(0, 0, 0, 0.48),
+    0 0 80px rgba(98, 200, 255, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+input:hover {
+  color: #ffffff;
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.34),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 700ms ease;
+}
+
+button:hover::after {
+  transform: translateX(120%);
+}
+
+.trust {
+  margin-top: clamp(24px, 3vw, 34px);
+  color: rgba(220, 235, 248, 0.72);
+}
+
+footer {
+  padding-bottom: 48px;
+}
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 :root {
@@ -220,10 +310,16 @@ footer a:hover {
   }
 
   h1 {
-    font-size: clamp(46px, 13vw, 72px);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
-  }
+  max-width: 1080px;
+  font-size: clamp(50px, 7vw, 104px);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  word-spacing: 0.03em;
+  font-weight: 900;
+  text-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.58),
+    0 0 80px rgba(98, 200, 255, 0.08);
+}
 
   .subheadline {
     margin-top: 26px;
@@ -241,4 +337,12 @@ footer a:hover {
   .trust {
     line-height: 1.75;
   }
+}
+
+.access-form.submitted {
+  border-color: rgba(155, 220, 255, 0.48);
+}
+
+.access-form.submitted button {
+  background: linear-gradient(135deg, #dff8ff, #9bdcff);
 }
