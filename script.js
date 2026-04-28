@@ -1,33 +1,41 @@
+const form = document.querySelector(".access-form");
 const input = document.querySelector("input");
 const button = document.querySelector("button");
-const form = document.querySelector(".ocean-input");
 
-function enterOcean() {
-  const value = input.value.trim();
+if (form && input && button) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  if (!value) {
-    input.placeholder = "Tell Ocean where to begin...";
-    input.focus();
-    form.classList.add("attention");
-    setTimeout(() => form.classList.remove("attention"), 900);
-    return;
-  }
+    const email = input.value.trim();
 
-  button.textContent = "Entering Ocean...";
-  form.classList.add("active");
-  document.body.classList.add("entered");
+    if (!email) {
+      input.focus();
+      return;
+    }
 
-  setTimeout(() => {
-    button.textContent = "Request received";
-    input.value = "";
-    input.placeholder = "Ocean is listening. Early access is coming.";
-  }, 1200);
+    button.textContent = "Request Received";
+    form.classList.add("submitted");
+  });
 }
 
-button.addEventListener("click", enterOcean);
+const revealTargets = document.querySelectorAll("footer");
 
-input.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    enterOcean();
-  }
+revealTargets.forEach((element) => {
+  element.classList.add("reveal");
 });
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.18,
+  }
+);
+
+revealTargets.forEach((element) => observer.observe(element));
