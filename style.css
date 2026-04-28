@@ -1,10 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
 :root {
-  --bg: #040b14;
-  --text: #eef7ff;
-  --muted: rgba(238, 247, 255, 0.66);
-  --line: rgba(255, 255, 255, 0.12);
-  --blue: #86d9ff;
-  --blue2: #38bdf8;
+  --bg: #03080f;
+  --bg-soft: #071523;
+  --text: #f3f8ff;
+  --muted: rgba(220, 235, 248, 0.68);
+  --soft: rgba(220, 235, 248, 0.48);
+  --line: rgba(190, 225, 255, 0.14);
+  --glass: rgba(255, 255, 255, 0.055);
+  --blue: #9bdcff;
+  --blue-strong: #62c8ff;
+  --hero-size: clamp(54px, 8vw, 118px);
+  --sub-size: clamp(19px, 2.1vw, 28px);
 }
 
 * {
@@ -22,10 +29,13 @@ body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 50% 18%, rgba(91, 191, 255, 0.22), transparent 34%),
-    radial-gradient(circle at 85% 78%, rgba(56, 189, 248, 0.12), transparent 30%),
-    linear-gradient(180deg, #071626 0%, var(--bg) 100%);
+    radial-gradient(circle at 50% 16%, rgba(98, 200, 255, 0.22), transparent 34%),
+    radial-gradient(circle at 82% 76%, rgba(25, 92, 138, 0.22), transparent 32%),
+    radial-gradient(circle at 18% 88%, rgba(112, 207, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg));
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
@@ -35,77 +45,102 @@ body::before {
   pointer-events: none;
   background-image: repeating-radial-gradient(
     circle at center,
-    rgba(255, 255, 255, 0.035) 0,
-    rgba(255, 255, 255, 0.035) 1px,
+    rgba(255, 255, 255, 0.028) 0,
+    rgba(255, 255, 255, 0.028) 1px,
     transparent 1px,
-    transparent 15px
+    transparent 18px
   );
-  opacity: 0.35;
+  opacity: 0.42;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.42) 72%);
 }
 
 .page {
-  width: min(1120px, calc(100% - 32px));
+  width: min(1160px, calc(100% - 40px));
   min-height: 100vh;
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  position: relative;
+  z-index: 1;
 }
 
 .brand {
-  padding: 30px 0;
-  font-size: 14px;
+  padding: 34px 0;
+  font-size: 13px;
   font-weight: 850;
-  letter-spacing: 0.34em;
-  color: rgba(238, 247, 255, 0.92);
+  letter-spacing: 0.36em;
+  color: rgba(243, 248, 255, 0.88);
 }
 
 .hero {
+  min-height: calc(100vh - 150px);
   display: grid;
   place-items: center;
   align-content: center;
   text-align: center;
-  padding: 36px 0 80px;
+  padding: 72px 0 96px;
 }
 
 .kicker {
-  margin-bottom: 20px;
-  font-size: 12px;
-  letter-spacing: 0.28em;
+  margin-bottom: 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.34em;
   color: var(--blue);
   text-transform: uppercase;
 }
 
 h1 {
-  max-width: 980px;
-  font-size: clamp(48px, 8vw, 104px);
-  line-height: 0.96;
-  letter-spacing: -0.055em;
+  max-width: 1040px;
+  font-size: var(--hero-size);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
   font-weight: 900;
-  text-shadow: 0 18px 50px rgba(0, 0, 0, 0.48);
+  text-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.58),
+    0 0 80px rgba(98, 200, 255, 0.08);
 }
 
 .subheadline {
-  max-width: 780px;
-  margin-top: 28px;
-  font-size: clamp(19px, 2.4vw, 29px);
-  line-height: 1.45;
+  max-width: 790px;
+  margin-top: 34px;
+  font-size: var(--sub-size);
+  line-height: 1.48;
   color: var(--muted);
 }
 
 .access-form {
   width: min(720px, 100%);
-  margin-top: 42px;
+  margin-top: 52px;
   padding: 12px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 12px;
   border: 1px solid var(--line);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
+  border-radius: 30px;
+  background: var(--glass);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
   box-shadow:
-    0 30px 100px rgba(0, 0, 0, 0.36),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 34px 110px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.075);
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.access-form:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(155, 220, 255, 0.44);
+  box-shadow:
+    0 40px 130px rgba(0, 0, 0, 0.48),
+    0 0 70px rgba(98, 200, 255, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 input {
@@ -114,68 +149,89 @@ input {
   outline: 0;
   background: transparent;
   color: var(--text);
-  font-size: 18px;
-  padding: 18px 20px;
+  font-size: 17px;
+  padding: 19px 22px;
 }
 
 input::placeholder {
-  color: rgba(238, 247, 255, 0.48);
+  color: rgba(220, 235, 248, 0.46);
 }
 
 button {
   border: 0;
-  border-radius: 20px;
-  padding: 0 28px;
-  min-height: 58px;
-  color: #03101c;
-  background: linear-gradient(135deg, #e7f8ff, var(--blue2));
-  font-size: 16px;
+  border-radius: 22px;
+  padding: 0 30px;
+  min-height: 60px;
+  color: #02101b;
+  background: linear-gradient(135deg, #edfaff, var(--blue-strong));
+  font-size: 15px;
   font-weight: 850;
   cursor: pointer;
-  box-shadow: 0 0 36px rgba(56, 189, 248, 0.28);
-  transition: transform 180ms ease, filter 180ms ease;
+  box-shadow:
+    0 0 36px rgba(98, 200, 255, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
 }
 
 button:hover {
   transform: translateY(-2px);
   filter: brightness(1.06);
+  box-shadow:
+    0 0 54px rgba(98, 200, 255, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
 .trust {
-  margin-top: 20px;
-  color: rgba(238, 247, 255, 0.62);
-  font-size: 14px;
-  letter-spacing: 0.08em;
+  margin-top: 24px;
+  color: var(--soft);
+  font-size: 13px;
+  letter-spacing: 0.1em;
 }
 
 footer {
-  padding: 26px 0 34px;
+  padding: 28px 0 38px;
   text-align: center;
 }
 
 footer a {
   color: var(--blue);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
+  opacity: 0.86;
+}
+
+footer a:hover {
+  opacity: 1;
 }
 
 @media (max-width: 720px) {
+  .page {
+    width: min(100% - 28px, 1160px);
+  }
+
   .brand {
     text-align: center;
     letter-spacing: 0.22em;
+    font-size: 12px;
   }
 
   .hero {
-    padding-top: 20px;
+    padding: 42px 0 80px;
   }
 
   h1 {
-    font-size: clamp(44px, 13vw, 68px);
-    line-height: 1;
+    font-size: clamp(46px, 13vw, 72px);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .subheadline {
+    margin-top: 26px;
   }
 
   .access-form {
     grid-template-columns: 1fr;
+    border-radius: 26px;
   }
 
   button {
@@ -183,6 +239,6 @@ footer a {
   }
 
   .trust {
-    line-height: 1.7;
+    line-height: 1.75;
   }
 }
