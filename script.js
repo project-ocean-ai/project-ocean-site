@@ -21,7 +21,7 @@ if (form && input && button && message) {
     input.placeholder = "Email received";
 
     message.textContent =
-      "Confirmed — your founder access request has been received.";
+  "Confirmed — your founder access request has been received.";
     message.classList.add("show");
   });
 }
