@@ -484,3 +484,30 @@ button:hover::before {
     padding: 0 12px;
   }
 }
+/* ===== Phase 10 Billionaire Trust Conversion Layer ===== */
+
+.microtrust {
+  margin-top: 10px;
+  color: rgba(220, 235, 248, 0.48);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.access-form.submitted + .form-message + .trust,
+.access-form.submitted + .form-message + .trust + .microtrust {
+  opacity: 0.9;
+}
+
+.form-message.show {
+  color: rgba(220, 235, 248, 0.82);
+}
+
+@media (max-width: 720px) {
+  .microtrust {
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.6;
+    padding: 0 16px;
+  }
+}
