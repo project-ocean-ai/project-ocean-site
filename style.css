@@ -435,3 +435,52 @@ button:hover::before {
     animation: none !important;
   }
 }
+/* ===== Phase 9 Mobile Luxury Polish ===== */
+
+@media (max-width: 720px) {
+
+  .hero {
+    padding: 48px 0 64px;
+  }
+
+  h1 {
+    font-size: clamp(54px, 12vw, 76px);
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+    word-spacing: -0.03em;
+    max-width: 100%;
+  }
+
+  .subheadline {
+    font-size: 17px;
+    line-height: 1.55;
+    opacity: 0.82;
+    padding: 0 8px;
+  }
+
+  .access-form {
+    margin-top: 28px;
+    padding: 12px;
+    border-radius: 26px;
+  }
+
+  .access-form input {
+    font-size: 18px;
+    padding: 18px 18px;
+  }
+
+  .access-form button {
+    height: 70px;
+    font-size: 22px;
+    font-weight: 800;
+    border-radius: 18px;
+  }
+
+  .trust {
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.72;
+    padding: 0 12px;
+  }
+}
