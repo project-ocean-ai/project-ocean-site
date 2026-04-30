@@ -40,18 +40,23 @@ if (form && message) {
       input.placeholder = "Email received";
       button.textContent = "Request Sent";
 
-      message.textContent =
-        "Confirmed — your founder access request has been received.";
-      message.classList.remove("error");
-      message.classList.add("show", "success");
-    } catch (err) {
-      button.textContent = "Try Again";
-      message.textContent =
-        "Something went wrong. Please try again or email sarah@projectocean.ai.";
-      message.classList.remove("success");
-      message.classList.add("show", "error");
-    }
+ message.textContent =
+  "Confirmed — your founder access request has been received.";
+message.classList.remove("error");
+message.classList.add("show", "success");
 
-    button.disabled = false;
-  });
+setTimeout(() => {
+  message.classList.remove("show");
+  button.textContent = "Request Access";
+  button.disabled = false;
+}, 4000);
+
+} catch (err) {
+  button.textContent = "Try Again";
+  message.textContent =
+    "Something went wrong. Please try again or email sarah@projectocean.ai.";
+  message.classList.remove("success");
+  message.classList.add("show", "error");
+
+  button.disabled = false;
 }
