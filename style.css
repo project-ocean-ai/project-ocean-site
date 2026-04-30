@@ -536,3 +536,6 @@ button:disabled {
   cursor: wait;
   opacity: 0.85;
 }
+.form-message.success {
+  color: rgba(180, 255, 210, 0.95);
+}

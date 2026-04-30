@@ -1,20 +1,22 @@
 const form = document.querySelector(".access-form");
-const input = document.querySelector(".access-form input");
-const button = document.querySelector(".access-form button");
 const message = document.querySelector(".form-message");
 
 function encode(data) {
   return new URLSearchParams(data).toString();
 }
 
-if (form && input && button && message) {
+if (form && message) {
+  const input = form.querySelector('input[type="email"]');
+  const button = form.querySelector('button');
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const email = input.value.trim();
 
-    if (!email || !email.includes("@") || !email.includes(".")) {
-      message.textContent = "Please enter a valid email.";
+    if (!input.checkValidity()) {
+      message.textContent = "Please enter a valid email address.";
+      message.classList.remove("success");
       message.classList.add("show", "error");
       input.focus();
       return;
@@ -24,26 +26,32 @@ if (form && input && button && message) {
     button.disabled = true;
 
     try {
-      await fetch("/", {
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
         body: encode({
           "form-name": "founder-access",
-          email,
+          email: email,
         }),
       });
+
+      if (!res.ok) throw new Error("Failed");
 
       input.value = "";
       input.placeholder = "Email received";
       button.textContent = "Request Sent";
+
       message.textContent =
         "Confirmed — your founder access request has been received.";
       message.classList.remove("error");
-      message.classList.add("show");
-    } catch {
+      message.classList.add("show", "success");
+    } catch (err) {
       button.textContent = "Try Again";
       message.textContent =
         "Something went wrong. Please try again or email sarah@projectocean.ai.";
+      message.classList.remove("success");
       message.classList.add("show", "error");
     }
 
