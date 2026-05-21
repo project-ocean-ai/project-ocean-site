@@ -30,6 +30,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  animation: oceanDrift 18s ease-in-out infinite alternate;
 }
 
 .page {
@@ -55,7 +56,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: 880px;
+  padding-bottom: 260px;
 
   overflow: hidden;
   position: relative;
@@ -98,23 +99,15 @@ body {
   opacity: 0;
 
   z-index: 2;
-  transform: translateY(-110px);
+  filter: blur(0px);
 }
 
 .hero-state-one {
-  animation: oceanStateOne 14s ease-in-out infinite;
+  animation: oceanStateOne 16s ease-in-out infinite;
 }
 
 .hero-state-two {
-  animation: oceanStateTwo 14s ease-in-out infinite;
-}
-
-.project-label {
-  margin-bottom: 26px;
-  font-size: clamp(18px, 1.2vw, 22px);
-  letter-spacing: 0.7em;
-  text-transform: uppercase;
-  color: rgba(225, 235, 248, 0.92);
+  animation: oceanStateTwo 16s ease-in-out infinite;
 }
 
 .project-ocean-title {
@@ -133,7 +126,7 @@ body {
 
   margin-bottom: 28px;
 
-  transform: translateY(-70px);
+  transform: translateY(-110px);
 }
 
 .hero-tagline {
@@ -143,36 +136,7 @@ body {
 
   color: rgba(220, 230, 240, 0.82);
 
-  transform: translateY(-65px);
-}
-
-.ocean-title {
-  font-size: clamp(120px, 17vw, 260px);
-  line-height: 0.9;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: rgba(245, 248, 255, 0.96);
-
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.55),
-    0 12px 28px rgba(0, 0, 0, 0.55),
-    0 0 34px rgba(120, 180, 255, 0.18);
-}
-
-.evolved-line {
-  margin-top: 34px;
-  font-size: clamp(20px, 1.4vw, 30px);
-  letter-spacing: 0.55em;
-  text-transform: uppercase;
-  color: rgba(226, 236, 248, 0.88);
-}
-
-.tagline {
-  margin-top: 42px;
-  font-size: clamp(14px, 1vw, 18px);
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
-  color: rgba(212, 224, 240, 0.74);
+  transform: translateY(-100px);
 }
 
 .you-ai-line {
@@ -190,7 +154,7 @@ body {
 
   margin-bottom: 28px;
 
-  transform: translateY(-175px);
+  transform: translateY(-110px);
 }
 
 .remembers-line {
@@ -199,39 +163,46 @@ body {
   letter-spacing: 0.42em;
   text-transform: uppercase;
   color: rgba(230, 238, 248, 0.84);
-  transform: translateY(-145px);
+
+  transform: translateY(-100px);
 }
 
 @keyframes oceanStateOne {
   0%,
   40% {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0px);
   }
 
-  50%,
-  100% {
+  48%,
+  92% {
     opacity: 0;
-    transform: translateY(-12px);
+    filter: blur(4px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0px);
   }
 }
 
 @keyframes oceanStateTwo {
   0%,
-  45% {
+  52% {
     opacity: 0;
-    transform: translateY(12px);
+    filter: blur(4px);
   }
 
-  58%,
-  92% {
+  60%,
+  84% {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0px);
   }
 
+  92%,
   100% {
     opacity: 0;
-    transform: translateY(-10px);
+    filter: blur(4px);
   }
 }
 
@@ -246,10 +217,41 @@ body {
     min-height: 620px;
   }
 
-  .evolved-line,
-  .tagline,
-  .remembers-line,
-  .and-line {
+  .remembers-line {
     letter-spacing: 0.22em;
   }
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 22px;
+  padding: 14px 24px;
+
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: rgba(245, 248, 255, 0.92);
+
+  border: 1px solid rgba(245, 248, 255, 0.22);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(18px);
+
+  transform: translateY(-102px);
+
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.hero-cta:hover {
+  border-color: rgba(245, 248, 255, 0.46);
+  background: rgba(255, 255, 255, 0.075);
 }
