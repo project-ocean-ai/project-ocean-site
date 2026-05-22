@@ -1,3 +1,10 @@
+/* TODO: finish section two layout */
+
+/* TODO: add mobile responsiveness */
+
+/* FIXME: hero title wraps on small screens */
+
+/* FIXME: button spacing feels too low */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,11 +29,41 @@ body {
   top: 32px;
   left: 40px;
   z-index: 20;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
+
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+
   color: #2a2529;
+}
+
+.project-ocean-title {
+  order: 1;
+
+  font-size: clamp(5rem, 10vw, 10rem);
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+  text-transform: lowercase;
+
+  color: #2a2529;
+
+  margin-bottom: 34px;
+}
+
+.tm {
+  font-size: 0.22em;
+  vertical-align: top;
+  position: relative;
+  top: 0.16em;
+  margin-left: 0.08em;
+}
+
+.tm-small {
+  font-size: 0.55em;
+  vertical-align: top;
+  margin-left: 0.08em;
 }
 
 .hero {
@@ -46,32 +83,19 @@ body {
 }
 
 .hero-state-one {
-  gap: 0;
+  gap: 12px;
 }
 
 .hero-kicker {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
 
-  letter-spacing: 0.38em;
+  letter-spacing: 0.34em;
 
   text-transform: uppercase;
 
   color: #6b6668;
 
-  margin-bottom: 54px;
-}
-
-.project-ocean-title {
-  order: 1;
-
-  font-size: clamp(4rem, 8vw, 8rem);
-  line-height: 0.88;
-  letter-spacing: -0.06em;
-  font-weight: 700;
-
-  color: #2a2529;
-
-  margin-bottom: 28px;
+  margin-bottom: 42px;
 }
 
 .hero-kicker {
@@ -90,7 +114,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 72px;
   padding: 16px 28px;
   border: 1px solid rgba(42, 37, 41, 0.16);
   border-radius: 999px;
@@ -106,4 +130,52 @@ body {
 .hero-cta:hover {
   background: #2a2529;
   color: #f3f0e7;
+}
+
+.about-section {
+  padding: 220px 72px;
+  border-top: 1px solid rgba(42, 37, 41, 0.08);
+}
+
+.about-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 120px;
+}
+
+.section-number {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #8b8588;
+
+  margin-bottom: 28px;
+}
+
+.about-title {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+
+  color: #2a2529;
+}
+
+.about-right {
+  padding-top: 12px;
+}
+
+.about-copy {
+  font-size: 1.28rem;
+  line-height: 1.7;
+  letter-spacing: -0.02em;
+
+  color: #4d474b;
+
+  margin-bottom: 42px;
+
+  max-width: 720px;
 }
