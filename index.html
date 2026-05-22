@@ -1,3 +1,16 @@
+<!--
+DONE: Navigation polish
+DONE: Sticky nav
+DONE: Smooth scroll anchors
+DONE: Minimal menu system
+DONE: Motion system
+DONE: Tesla-style fade transitions
+TODO: Trust / privacy section
+TODO: RAI / EASI visual architecture
+TODO: Mobile optimization
+TODO: Deployment
+-->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,7 +33,15 @@
 
   <body>
     <main class="page">
-      <header class="brand">project ocean™</header>
+     <header class="site-header">
+  <div class="brand">project ocean™</div>
+
+  <nav class="main-nav">
+    <a href="#about">About</a>
+    <a href="#manifesto">Vision</a>
+    <a href="mailto:sarah@projectocean.ai">Contact</a>
+  </nav>
+</header>
 
       <section class="hero">
         <div class="hero-state-one">
@@ -33,7 +54,7 @@
         </div>
       </section>
 
-      <section class="about-section">
+      <section id="about" class="about-section"></section>
         <div class="about-grid">
           <div class="about-left">
             <p class="section-label">WHAT WE'RE BUILDING</p>
@@ -64,7 +85,8 @@
           </div>
         </div>
       </section>
-      <section class="manifesto-section">
+
+      <section id="manifesto" class="manifesto-section">
         <div class="manifesto-container">
           <p class="manifesto-label">WHY IT MATTERS</p>
 

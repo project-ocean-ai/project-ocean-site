@@ -1,4 +1,4 @@
-/* TODO: finish section two layout */
+/* DONE: finish section two layout */
 
 /* TODO: add mobile responsiveness */
 
@@ -220,4 +220,101 @@ body {
   color: #4d474b;
 
   margin-bottom: 34px;
+}
+section {
+  scroll-margin-top: 140px;
+}
+.hero {
+  animation: heroReveal 1.6s ease;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.about-section,
+.manifesto-section {
+  animation: sectionReveal 1.4s ease;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  animation: pageFade 1.2s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  animation: heroReveal 1.6s ease;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.about-section,
+.manifesto-section {
+  animation: sectionReveal 1.4s ease;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  scroll-margin-top: 140px;
 }
