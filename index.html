@@ -62,7 +62,7 @@ EASI — Emotionally Aware Systems Intelligence
       </header>
 
       <section class="hero-state-one">
-        <p class="hero-kicker">PROJECT OCEAN™</p>
+        <p class="hero-brand">PROJECT OCEAN™</p>
 
         <p class="hero-mini">Emotionally Intelligent AI</p>
 
@@ -90,15 +90,34 @@ EASI — Emotionally Aware Systems Intelligence
           </div>
         </div>
       </section>
+
       <section id="contact" class="contact-section">
         <div class="contact-inner">
           <p class="contact-label">Founder Access</p>
 
           <h2 class="contact-title">Private early access inquiries.</h2>
 
-          <a class="contact-email" href="mailto:sarah@projectocean.ai">
-            sarah@projectocean.ai
-          </a>
+          <form
+            class="founder-form"
+            onsubmit="
+              event.preventDefault();
+              submitFounderAccess(
+                document.getElementById('founder-email').value,
+              );
+            "
+          >
+            <input
+              type="email"
+              id="founder-email"
+              class="founder-input"
+              placeholder="Enter your email"
+              required
+            />
+
+            <button type="submit" class="founder-button">
+              Request Founder Access
+            </button>
+          </form>
         </div>
       </section>
     </main>

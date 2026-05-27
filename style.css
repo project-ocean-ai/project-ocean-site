@@ -74,30 +74,41 @@ body {
   align-items: center;
   justify-content: center;
 
+  gap: 10px;
+
   text-align: center;
 
-  padding: 180px 32px 140px;
+  padding: 140px 28px 120px;
 
   background: #f5f2ec;
 }
 
-.hero-kicker {
-  font-size: 0.72rem;
-  letter-spacing: 0.42em;
+.hero-brand {
+  font-size: 1rem;
+
+  letter-spacing: 0.22em;
+
   text-transform: uppercase;
 
-  color: #7f7a7c;
+  color: #2d292c;
 
-  margin-bottom: 28px;
+  margin-bottom: 8px;
+
+  font-weight: 650;
+
+  opacity: 0.96;
 }
 
 .hero-mini {
-  font-size: 1rem;
-  color: #5f5a5d;
+  font-size: 1.45rem;
 
-  margin-bottom: 24px;
+  color: #4e494d;
 
-  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 520;
 }
 
 .project-ocean-title {
@@ -105,16 +116,16 @@ body {
 
   font-size: clamp(3.2rem, 7.5vw, 6.2rem);
 
-  line-height: 0.9;
+  line-height: 0.94;
   letter-spacing: -0.08em;
 
-  font-weight: 600;
+  font-weight: 650;
 
   color: #1f1b1f;
 }
 
 .hero-cta {
-  margin-top: 52px;
+  margin-top: 42px;
 
   display: inline-flex;
   align-items: center;
@@ -268,7 +279,7 @@ footer a {
   font-size: 0.72rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255, 255, 255, 0.42);
 
   margin-bottom: 24px;
 }
@@ -279,7 +290,7 @@ footer a {
   line-height: 1;
   letter-spacing: -0.06em;
 
-  color: rgba(255,255,255,0.94);
+  color: rgba(255, 255, 255, 0.94);
 
   margin-bottom: 40px;
 }
@@ -290,4 +301,75 @@ footer a {
   font-size: 1.1rem;
 
   color: #9adfff;
+}
+.founder-form {
+  margin-top: 36px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.founder-input {
+  width: min(420px, 88vw);
+
+  padding: 18px 22px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  background: rgba(255, 255, 255, 0.72);
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: #111111;
+
+  outline: none;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+
+  backdrop-filter: blur(12px);
+}
+
+.founder-input:focus {
+  border-color: rgba(118, 196, 255, 0.9);
+
+  box-shadow: 0 0 0 4px rgba(118, 196, 255, 0.16);
+
+  transform: translateY(-1px);
+}
+
+.founder-button {
+  border: none;
+
+  padding: 18px 34px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #edfaff, #9edcff);
+
+  color: #111111;
+
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
+  box-shadow: 0 10px 34px rgba(118, 196, 255, 0.18);
+}
+
+.founder-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 40px rgba(118, 196, 255, 0.28);
 }
