@@ -36,7 +36,7 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  background: rgba(245, 242, 236, 0.72);
+  background: #f5f2ec;
 
   backdrop-filter: blur(20px);
 
@@ -251,8 +251,26 @@ footer a {
     padding: 0 22px;
   }
 
+  .hero-state-one {
+    padding: 130px 22px 100px;
+  }
+
+  .hero-brand {
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+
+  .hero-mini {
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+    line-height: 1.12;
+  }
+
   .project-ocean-title {
-    font-size: clamp(4rem, 18vw, 7rem);
+    font-size: clamp(4.4rem, 17vw, 6.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.07em;
   }
 
   .continuity-lines {
@@ -324,7 +342,7 @@ footer a {
   font-size: 1rem;
   font-weight: 500;
 
-  color: #111111;
+  color: #000000;
 
   outline: none;
 
@@ -372,4 +390,82 @@ footer a {
   transform: translateY(-2px);
 
   box-shadow: 0 14px 40px rgba(118, 196, 255, 0.28);
+}
+.founder-reflection {
+  width: min(620px, 88vw);
+
+  min-height: 90px;
+
+  padding: 18px 22px;
+
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  background: rgba(255, 255, 255, 0.72);
+
+  font-size: 1rem;
+  font-family: inherit;
+
+  color: #111111;
+
+  resize: vertical;
+
+  outline: none;
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+
+  backdrop-filter: blur(12px);
+}
+
+.founder-reflection:focus {
+  border-color: rgba(118, 196, 255, 0.9);
+
+  box-shadow: 0 0 0 4px rgba(118, 196, 255, 0.16);
+
+  transform: translateY(-1px);
+}
+.founder-input::placeholder {
+  color: rgba(17, 17, 17, 0.85);
+}
+
+.founder-reflection::placeholder {
+  color: rgba(17, 17, 17, 0.85);
+}
+.reflection-note {
+  margin-top: -6px;
+
+  max-width: 620px;
+
+  text-align: center;
+
+  font-size: 0.82rem;
+
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+.insights-banner {
+  background: #09111a;
+
+  padding: 18px 24px;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.insights-banner p {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+#insight-count {
+  color: #9adfff;
+
+  font-weight: 700;
 }

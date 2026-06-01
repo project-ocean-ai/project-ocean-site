@@ -1,8 +1,9 @@
 // Project Ocean site interactions will live here.
+
 const SUPABASE_URL = "https://xjogbimjemrfmefnwgbb.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_wzG4DlbSfml_aLQEUSVc9g_monLTD34";
 
-async function submitFounderAccess(email) {
+async function submitFounderAccess(email, concern) {
   try {
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/founder_access_requests`,
@@ -16,6 +17,7 @@ async function submitFounderAccess(email) {
         },
         body: JSON.stringify({
           email: email,
+          concern: concern || null,
           source: "website",
         }),
       },

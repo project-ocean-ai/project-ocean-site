@@ -1,18 +1,4 @@
 <!--
-SIMPLIFY THE HOMEPAGE COPY TOMORROW INTO THE 2 SLIDE STRUCTURE
-TODO:Slide 1
-PROJECT OCEAN™
-Emotionally Intelligent AI
-AI that remembers you.
-[ Request Founder Access ]
-TODO:Slide 2
-Private.
-Context-aware.
-Built for continuity.
-Powered by relational intelligence architecture designed around emotional awareness, memory, and long-term alignment.
-RAI — Relational Artificial Intelligence
-EASI — Emotionally Aware Systems Intelligence
-[ Request Founder Access ]
 -->
 
 <html lang="en">
@@ -91,6 +77,14 @@ EASI — Emotionally Aware Systems Intelligence
         </div>
       </section>
 
+      <section class="insights-banner">
+        <p>
+          <span id="insight-count">1</span>
+          community insights shared with Ocean. Early contributors receive
+          priority Founder Access consideration.
+        </p>
+      </section>
+
       <section id="contact" class="contact-section">
         <div class="contact-inner">
           <p class="contact-label">Founder Access</p>
@@ -103,6 +97,7 @@ EASI — Emotionally Aware Systems Intelligence
               event.preventDefault();
               submitFounderAccess(
                 document.getElementById('founder-email').value,
+                document.getElementById('founder-reflection').value,
               );
             "
           >
@@ -114,6 +109,16 @@ EASI — Emotionally Aware Systems Intelligence
               required
             />
 
+            <textarea
+              id="founder-reflection"
+              class="founder-reflection"
+              rows="3"
+              placeholder="What is your biggest concern about the future of AI?"
+            ></textarea>
+
+            <p class="reflection-note">
+              Your response may help shape future Ocean architecture decisions.
+            </p>
             <button type="submit" class="founder-button">
               Request Founder Access
             </button>
